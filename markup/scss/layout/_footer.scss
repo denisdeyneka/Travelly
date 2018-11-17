@@ -1,0 +1,63 @@
+#footer {
+	margin: 0 auto;
+	max-width: 100%;
+	background-color: $base-background-color;
+	padding: 27px 0 25px;
+
+	.copyright {
+		color: $dove-gray;
+		display: inline;
+
+		span {
+			font-size: 14px;
+		}
+
+		a {
+			@include animate(color)
+			color: inherit;
+
+			&:hover {
+				color: $black;
+				text-decoration: underline;
+			}
+		}
+	}
+	
+	.footer-nav{
+		float: right;
+		
+		ul {
+			margin: 3px 0 0;
+			list-style: none;
+			float: right;
+			font-family: $secondary-font-family;
+			font-size: 14px;
+			font-weight: 500;
+		}
+
+		li {
+			padding: 0 9px;
+			float: left;
+		
+			&:last-child {
+				padding-right: 0;
+			}
+
+			&:first-child {
+				padding-left: 0;
+			}
+		}
+
+		a {
+			@include animate (color);
+
+			color: $black;
+			text-decoration: none;
+			font-weight: 700;
+
+			&:hover {
+				color: $red-orange;
+			}
+		}
+	}
+}

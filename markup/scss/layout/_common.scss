@@ -1,0 +1,180 @@
+body {
+	font-family: $base-font-family;
+}
+	
+h1 {
+	font-size: $big-heading-font-size;
+	font-weight: 300;
+}
+
+h3 {
+	font-family: $secondary-font-family;
+	font-size: $base-heading-font-size;
+	font-weight: 600;
+}
+
+p {	
+	font-size: $base-font-size;
+	font-weight: 400;
+	color: $base-font-color;
+}
+
+.container {
+	max-width: 1000px;
+	padding: 0; // or => width: 1200px; padding: 0 100px ???
+	margin: 0 auto;
+}
+
+.form {
+	text-align: center;
+	font-size: 4px;
+	input {
+		width: 326px;
+		height: 40px;
+		padding-left: 12px;
+		border: none;
+		font-size: $input-font-size;
+	}
+
+	button {
+		@include animate (background-color);
+		
+		height: 40px;
+		padding: 0 48px;
+		margin-left: -5px;
+		background-color: $button-background-color;
+		border: none;
+		color: $button-text-color;
+		font-size: $button-font-size;
+		font-weight: 400; 
+
+		&:hover {
+			background-color: $button-background-color-hover;
+		}
+	}
+}
+
+#main {
+	background-color: $base-background-color;
+	
+	.content-box {
+		padding: 54px 0 70px 0;
+
+		.flex-container {
+			display: flex;
+			vertical-align: top;
+			justify-content: space-between;
+
+			.article {
+				@include animate (box-shadow)
+
+				width: 240px;
+				height: 320px;
+				display: inline-block;
+				overflow: hidden;
+				border-bottom: 2px solid $westar;
+				background-color: $white;
+				position: relative;
+
+				&:hover {
+					box-shadow: 0 0 10px;
+				}
+				
+				.image-holder {
+					position: relative;
+					height: 200px;
+				}
+
+				.article-image {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					z-index: 0;
+				}
+
+				.image-mask {
+					opacity: 0.4;
+					left: 0;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					width: 100%;
+					height: 100%;
+					z-index: 1;
+					position: absolute;
+					background: linear-gradient(to top, black 0%, transparent 100%);
+				}
+
+				.price-holder {
+					right: 16px;
+					bottom: 11px;
+					position: absolute;
+					z-index: 2;
+					color: $white;
+					font-size: 12px;
+				}
+
+				.text-holder {
+					padding: 20px 15px 20px 20px;
+
+					h3 {
+						font-size: 14px;
+					}
+
+					p {
+						font-size: 13px;
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+
+	.extras {				
+		background-color: $white; 
+		padding: 66px 0 80px 0;
+
+		.column-holder {
+			display: flex;
+			vertical-align: top;
+			justify-content: space-between;
+			padding-bottom: 50px;
+
+			.column {
+				max-width: 33%;
+				padding-right: 55px;
+				
+				p {
+					color: $gray;
+				}
+			}
+		}
+
+		h2 {
+			font-weight: 300;
+			font-size: $big-heading-font-size;
+			margin-bottom: 54px;
+		}
+	}
+
+	.subscribe {
+		text-align: center;
+
+		.heading-holder {
+			padding-bottom: 18px;
+		}
+
+		input {
+			background-color: $ligth-gray;
+		}
+
+		button {
+			padding: 0 39px;
+		}
+	}
+}
